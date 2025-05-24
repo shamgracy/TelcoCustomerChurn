@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Churn Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            background: #f2f2f2;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        textarea {
+            width: 100%;
+            height: 120px;
+            font-size: 16px;
+            padding: 10px;
+            resize: none;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+            color: green;
+        }
+          /*  label {
+  color: white;
+  padding: 8px;
+  font-family: Arial;
+        }
+        .success {background-color: #04AA6D;} /* Green */
+    </style>
+</head>
+
+<body>
+
+    <h1>Churn Prediction</h1>
+    <form action="http://127.0.0.1:5000/predict" method="post" target="_blank">
+        <label for="json">Enter JSON data:</label><br>
+        <textarea name="json" id="json" required>
+            {
+            "SeniorCitizen": 0,
+            "tenure": 12,
+            "MonthlyCharges": 65.0,
+            "TotalCharges": 500.0,
+            "Contract_Month-to-month": 1,
+            "Contract_One year": 0,
+            "Contract_Two year": 0,
+            "InternetService_DSL": 0,
+            "InternetService_Fiber optic": 1,
+            "InternetService_No": 0,
+            "PaymentMethod_Bank transfer (automatic)": 0,
+            "PaymentMethod_Credit card (automatic)": 0,
+            "PaymentMethod_Electronic check": 1,
+            "PaymentMethod_Mailed check": 0,
+            "OnlineSecurity_No": 1,
+            "OnlineSecurity_Yes": 0,
+            "OnlineBackup_No": 1,
+            "OnlineBackup_Yes": 0,
+            "DeviceProtection_No": 1,
+            "DeviceProtection_Yes": 0,
+            "TechSupport_No": 1,
+            "TechSupport_Yes": 0,
+            "StreamingTV_Yes": 1             }
+            </textarea><br>
+
+<label id="result">Churn Prediction Result={{Churn_Prediction}}</label>
+        </br>
+        <button type="submit">Submit</button>
+        </form>
+    <!--<form id="predictForm" action="{{url_for('predict')}}" method="post">
+        <label for="inputData">Enter JSON input:</label><br>
+        <textarea id="inputData" placeholder='{"tenure": 5, "MonthlyCharges": 75, ...}' required></textarea><br>
+        <label>{{predication_result}}</label>
+        <button type="submit">Predict</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('predictForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const inputText = document.getElementById('inputData').value;
+
+            try {
+                const response = await fetch('http://127.0.0.1:5000/predict', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: inputText
+                });
+
+                const result = await response.json();
+                document.getElementById('result').textContent = JSON.stringify(result);
+            } catch (err) {
+                document.getElementById('result').textContent = 'Error: ' + err.message;
+            }
+        });
+    </script>-->
+
+</body>
+
+</html>
